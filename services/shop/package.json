@@ -1,0 +1,20 @@
+{
+  "name": "shop",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "dotenv -e .env.dev webpack serve",
+    "build:dev": "dotenv -e .env.dev webpack",
+    "build:prod": "dotenv -e .env.prod webpack"
+  },
+  "dependencies": {
+    "@packages/build-config": "*",
+    "@packages/shared": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1"
+  },
+  "devDependencies": {
+    "@types/react": "~18.2.65",
+    "@types/react-dom": "~18.2.21"
+  }
+}
