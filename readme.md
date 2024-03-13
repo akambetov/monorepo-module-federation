@@ -571,7 +571,7 @@ ts-node
       })
 
 
-  !!! webpack.config.ts. Нужно убрать optimization.splitChunks.
+  !!! webpack.config.ts. Нужно optimization.splitChunks.cacheGroups.SOME_GROUP.chunks= 'async'
   
   ## Во всех аппках (host, shop, admin) создаем:
 
@@ -677,7 +677,7 @@ ts-node
     #1. Название файла, который отдаем наружу
     #2. Что отдаем наружу
     #3. Ключ обязательно должен начинаться с './'
-    #4. eager: true -> либа с таким флагом подгрузиться сразу, противоположность lazy-loading
+    #4. eager: true -> либа с таким флагом подгрузиться сразу (синхронно в initial чанке), противоположность lazy-loading
     #5. зафиксирована версия либы
 
     import webpack from 'webpack'

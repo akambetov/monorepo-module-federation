@@ -35,15 +35,18 @@ export default () => {
       ...packageJson.dependencies,
       react: {
         eager: true,
-        requiredVersion: packageJson.dependencies['react']
+        requiredVersion: packageJson.dependencies['react'],
+        singleton: true
       },
       'react-router-dom': {
         eager: true,
-        requiredVersion: packageJson.dependencies['react-router-dom']
+        requiredVersion: packageJson.dependencies['react-router-dom'],
+        singleton: true
       },
       'react-dom': {
         eager: true,
-        requiredVersion: packageJson.dependencies['react-dom']
+        requiredVersion: packageJson.dependencies['react-dom'],
+        singleton: true
       }
     }
   }))

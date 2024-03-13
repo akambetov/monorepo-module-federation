@@ -1,9 +1,13 @@
 import { App } from "@/components/App";
 import { LazyShop } from "@/pages/shop/ShopLazy";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import { shopUrls } from "@packages/shared";
 
 const routes = [
+  {
+    path: '/',
+    element: <Navigate to={shopUrls.main} />
+  },
   {
     path: shopUrls.root,
     element: <App />,

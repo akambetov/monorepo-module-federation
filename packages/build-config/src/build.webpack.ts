@@ -28,17 +28,17 @@ export const buildWebpack = (options: IBuildOptions): Configuration => {
       rules: buildLoaders({ isDev, isProd }),
     },
     resolve: buildResolvers(paths.src),
-    // optimization: {
-    //   splitChunks: {
-    //     cacheGroups: {
-    //       reactVendor: {
-    //         test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
-    //         name: 'vendor-react',
-    //         chunks: 'all',
-    //       },
-    //     },
-    //   },
-    // },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          reactVendor: {
+            test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
+            name: 'vendor-react',
+            chunks: 'async',
+          },
+        },
+      },
+    },
     devtool: isDev ? 'eval-source-map' : 'source-map',
     devServer: isDev ? buildDevServer(port) : undefined,
   };
